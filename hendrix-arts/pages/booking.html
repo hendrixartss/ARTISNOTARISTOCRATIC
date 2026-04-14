@@ -1,0 +1,262 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Book Your Slot — HendrixArts</title>
+  <meta name="description" content="Book your commissioned pen portrait with HendrixArts. Choose your tier, submit your details, and pay securely." />
+  <link rel="stylesheet" href="../css/style.css" />
+  <link rel="stylesheet" href="../css/pages.css" />
+  <script src="https://cdn.jsdelivr.net/npm/@emailjs/browser@4/dist/email.min.js"></script>
+  <script>emailjs.init('bRuZEyN6Fvs9K9KDq');</script>
+</head>
+<body>
+
+  <div id="header-placeholder"></div>
+
+  <main class="page-content">
+
+    <!-- PAGE HERO -->
+    <section class="page-hero" style="padding-bottom:3rem;">
+      <div class="page-hero-content">
+        <p class="section-label">Get Your Portrait</p>
+        <h1 class="page-title">Book Your<br><span>Slot</span></h1>
+        <p class="page-desc">Slots are limited per campaign cycle. Fill out the form below, choose your tier, and secure your commission with a 60% deposit.</p>
+      </div>
+    </section>
+
+    <!-- BOOKING FORM -->
+    <section class="booking-section">
+
+      <div class="booking-form-wrap aos">
+        <h2>COMMISSION DETAILS</h2>
+        <p>Tell us about your commission. The more detail you provide, the better your result.</p>
+
+        <form id="booking-form" novalidate>
+
+          <div class="form-row">
+            <div class="form-group">
+              <label for="f-name">Full Name *</label>
+              <input type="text" id="f-name" name="name" placeholder="e.g. Adaeze Okafor" required />
+            </div>
+            <div class="form-group">
+              <label for="f-email">Email Address *</label>
+              <input type="email" id="f-email" name="email" placeholder="you@example.com" required />
+            </div>
+          </div>
+
+          <div class="form-row">
+            <div class="form-group">
+              <label for="f-phone">Phone / WhatsApp *</label>
+              <input type="tel" id="f-phone" name="phone" placeholder="+234 800 000 0000" required />
+            </div>
+            <div class="form-group">
+              <label for="f-state">State / City *</label>
+              <input type="text" id="f-state" name="state" placeholder="e.g. Lagos, Abuja" required />
+            </div>
+          </div>
+
+          <!-- TIER SELECTION -->
+          <div class="form-group">
+            <label>Select Your Tier *</label>
+            <div class="tier-select-grid">
+              <label class="tier-option" data-tier="muse">
+                <input type="radio" name="tier" value="muse" />
+                <span class="tier-option-name">MUSE</span>
+                <span class="tier-option-price">Free · Competition</span>
+              </label>
+              <label class="tier-option" data-tier="collector" style="border-color:rgba(247,227,200,0.3);">
+                <input type="radio" name="tier" value="collector" checked />
+                <span class="tier-option-name">ART COLLECTOR</span>
+                <span class="tier-option-price">₦7k – ₦10k</span>
+              </label>
+              <label class="tier-option" data-tier="patron">
+                <input type="radio" name="tier" value="patron" />
+                <span class="tier-option-name">PATRON</span>
+                <span class="tier-option-price">₦15k - ₦20k</span>
+              </label>
+            </div>
+          </div>
+
+          
+
+          <div class="form-group">
+            <label for="f-frame">Frame Preference</label>
+            <select id="f-frame" name="frame">
+              <option value="no">No Frame — Artwork Only</option>
+              <option value="simple">Wooden Frame</option>
+              <option value="premium">Borderless Frame</option>
+            </select>
+          </div>
+<div class="form-group">
+            <label for="f-subjects">Frame Color *</label>
+            <select id="f-subjects" name="subjects" required>
+              <option value="">— Select —</option>
+              <option value="1">Black & Gold</option>
+              <option value="2">White & Gold</option>
+              </select>
+          </div>
+
+      
+          <div class="form-group">
+            <label for="f-address">Delivery Address *</label>
+            <textarea id="f-address" name="address" placeholder="Full delivery address including LGA and State..." required></textarea>
+          </div>
+
+          <div class="form-group">
+            <label for="f-notes">Additional Notes / References</label>
+            <textarea id="f-notes" name="notes" placeholder="Describe the mood, pose, background, or anything special you'd like..."></textarea>
+          </div>
+
+          <div class="form-group">
+            <label for="f-photo">Reference Photo Upload *</label>
+            <div id="upload-container" style="border:1px dashed rgba(247,227,200,0.4); border-radius:4px; padding:2rem; text-align:center; position:relative; cursor:pointer; background:rgba(247,227,200,0.02); transition:border-color 0.3s ease;">
+              <input type="file" id="f-photo" accept="image/jpeg, image/png, image/webp" style="opacity:0; position:absolute; top:0; left:0; width:100%; height:100%; cursor:pointer; z-index:2;" required />
+              <div id="upload-ui" style="position:relative; z-index:1; pointer-events:none;">
+                <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="var(--warm)" stroke-width="2" style="margin-bottom:0.8rem;"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4M17 8l-5-5-5 5M12 3v12"/></svg>
+                <div id="upload-text" style="color:rgba(255,255,255,0.7); font-size:0.9rem; margin-bottom:0.5rem;">Click to upload or drag and drop</div>
+                <div style="color:rgba(255,255,255,0.4); font-size:0.75rem;">JPG, PNG or WEBP (Max 5MB)</div>
+              </div>
+              <div id="upload-status" style="display:none; position:relative; z-index:1; flex-direction:column; align-items:center; pointer-events:none;">
+                <div class="spinner" style="width:24px; height:24px; border:2px solid rgba(247,227,200,0.2); border-top-color:var(--warm); border-radius:50%; animation:spin 1s linear infinite; margin-bottom:0.8rem;"></div>
+                <div id="upload-status-text" style="color:var(--warm); font-size:0.9rem;">Uploading to Drive...</div>
+              </div>
+              <div id="upload-success" style="display:none; position:relative; z-index:1; flex-direction:column; align-items:center; pointer-events:none;">
+                <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="#4CAF50" stroke-width="2" style="margin-bottom:0.8rem;"><path d="M22 11.08V12a10 10 0 1 1-5.93-9.14M22 4L12 14.01l-3-3"/></svg>
+                <div id="upload-success-text" style="color:#4CAF50; font-size:0.9rem;">Image securely uploaded!</div>
+              </div>
+            </div>
+            <input type="hidden" id="f-photo-url" name="photoUrl" />
+            <style>
+              @keyframes spin { 100% { transform: rotate(360deg); } }
+              #upload-container:hover { border-color: var(--warm); }
+              #upload-container.dragover { border-color: var(--warm); background:rgba(247,227,200,0.08); }
+            </style>
+          </div>
+
+          <div class="form-checkbox">
+            <input type="checkbox" id="f-terms" name="terms" required />
+            <label for="f-terms">I agree to the <a href="../pages/faq.html#terms">Terms & Conditions</a>. I understand payment is 60% upfront and 40% on completion, and that slots are subject to availability.</label>
+          </div>
+
+          <div style="padding: 1.25rem; background: rgba(247,227,200,0.05); border: 1px solid rgba(247,227,200,0.1); border-radius: 2px; margin-bottom: 1.5rem; display:flex; justify-content:space-between; align-items:center;">
+            <span style="font-size:0.8rem; letter-spacing:0.1em; text-transform:uppercase; color:rgba(255,255,255,0.5);">60% Deposit Due Now:</span>
+            <span id="booking-total" style="font-family:var(--font-display); font-size:1.4rem; color:var(--warm); letter-spacing:0.05em;">₦5,100</span>
+          </div>
+
+          <button type="submit" id="pay-btn" class="btn btn-primary" style="width:100%; justify-content:center; padding:16px; font-size:0.9rem;">
+            Proceed to Payment
+            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg>
+          </button>
+
+          <p style="text-align:center; font-size:0.72rem; color:rgba(255,255,255,0.3); margin-top:1rem; letter-spacing:0.05em;">
+            Secure Bank Transfer · NGN Payments Only
+          </p>
+        </form>
+      </div>
+
+      <!-- SIDEBAR -->
+      <div class="booking-sidebar">
+
+        <div class="booking-sidebar-card aos">
+          <h3>WHAT'S INCLUDED</h3>
+          <ul class="sidebar-list">
+            <li>Hand-drawn pen portrait by Joshua Makinde</li>
+            <li>High-quality paper — A4, A3, or A2</li>
+            <li>Your choice of subject(s)</li>
+            <li>Frame options available</li>
+            <li>Doorstep delivery across Nigeria</li>
+            <li>60/40 payment split — you only pay 40% on completion</li>
+          </ul>
+        </div>
+
+        <div class="booking-sidebar-card aos aos-delay-1">
+          <h3>PAYMENT INFO</h3>
+          <ul class="sidebar-list">
+            <li>60% upfront via Bank Transfer</li>
+            <li>40% paid on final delivery</li>
+            <li>Payments credited to Hendrix Arts account</li>
+            <li>Receipts sent to your email automatically</li>
+          </ul>
+          <div class="payment-logos" style="margin-top:1.25rem;">
+            <div class="payment-logo">BANK TRF</div>
+          </div>
+        </div>
+
+        <div class="booking-sidebar-card aos aos-delay-2">
+          <h3>QUESTIONS?</h3>
+          <ul class="sidebar-list">
+            <li>WhatsApp: <a href="https://wa.me/2348134530753" style="color:var(--warm);">WhatsApp</a></li>
+            <li>Email: <a href="mailto:hendrixartss@gmail.com" style="color:var(--warm);">hendrixartss@gmail.com</a></li>
+            <li><a href="../pages/faq.html" style="color:var(--warm);">View the FAQ →</a></li>
+          </ul>
+        </div>
+
+      </div>
+
+    </section>
+
+  </main>
+
+  <div id="footer-placeholder"></div>
+
+  <!-- CUSTOM ALERT MODAL -->
+  <div id="custom-alert-modal" style="display:none; position:fixed; top:0; left:0; width:100%; height:100%; background:rgba(10,10,10,0.85); backdrop-filter:blur(4px); z-index:10000; justify-content:center; align-items:center;">
+    <div style="background:var(--dark-grey); border:1px solid rgba(247,227,200,0.15); border-radius:8px; padding:2.5rem; max-width:400px; width:90%; text-align:center; box-shadow:0 15px 40px rgba(0,0,0,0.5);">
+      <div id="custom-alert-icon" style="margin-bottom:1.5rem; display:flex; justify-content:center;"></div>
+      <h3 id="custom-alert-title" style="margin-bottom:1rem; font-family:var(--font-display); letter-spacing:0.05em; font-size:1.5rem; color:var(--text);">Alert</h3>
+      <p id="custom-alert-message" style="color:rgba(255,255,255,0.7); font-size:0.95rem; line-height:1.5; margin-bottom:2rem; white-space:pre-wrap;"></p>
+      <button type="button" id="custom-alert-ok-btn" class="btn btn-primary" style="width:100%; justify-content:center;">OK</button>
+    </div>
+  </div>
+
+  <!-- MANUAL PAYMENT MODAL -->
+  <div id="manual-payment-modal" style="display:none; position:fixed; top:0; left:0; width:100%; height:100%; background:rgba(10,10,10,0.85); backdrop-filter:blur(4px); z-index:10000; justify-content:center; align-items:center;">
+    <div style="background:var(--dark-grey); border:1px solid rgba(247,227,200,0.15); border-radius:8px; padding:2.5rem; max-width:400px; width:90%; text-align:center; box-shadow:0 15px 40px rgba(0,0,0,0.5);">
+      <h3 style="margin-bottom:0.5rem; font-family:var(--font-display); letter-spacing:0.05em; font-size:1.5rem; color:var(--text);">Make Payment</h3>
+      <p style="color:rgba(255,255,255,0.7); font-size:0.95rem; margin-bottom:1.5rem;">Please transfer <strong id="manual-payment-amount" style="color:var(--warm);"></strong> to the account below within <span id="payment-timer" style="color:var(--warm); font-weight:bold; font-size:1.1rem;">10:00</span>.</p>
+      
+      <div style="background:rgba(247,227,200,0.05); padding:1.5rem; border-radius:4px; margin-bottom:1.5rem; text-align:left;">
+        <div style="margin-bottom:0.75rem;">
+          <span style="font-size:0.75rem; color:rgba(255,255,255,0.5); text-transform:uppercase;">Bank Name</span>
+          <div style="font-size:1.1rem; color:var(--text);">OPAY (PAYCOM)</div>
+        </div>
+        <div style="margin-bottom:0.75rem;">
+          <span style="font-size:0.75rem; color:rgba(255,255,255,0.5); text-transform:uppercase;">Account Number</span>
+          <div style="font-size:1.4rem; color:var(--warm); letter-spacing:0.1em; display:flex; align-items:center; justify-content:space-between;">
+            8072102610
+            <button type="button" onclick="navigator.clipboard.writeText('8072102610'); alert('Account number copied!')" style="background:none; border:none; color:rgba(255,255,255,0.5); cursor:pointer; padding:4px;">
+              <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M16 4h2a2 2 0 0 1 2 2v14a2 2 0 0 1-2 2H6a2 2 0 0 1-2-2V6a2 2 0 0 1 2-2h2"></path><rect x="8" y="2" width="8" height="4" rx="1" ry="1"></rect></svg>
+            </button>
+          </div>
+        </div>
+        <div>
+          <span style="font-size:0.75rem; color:rgba(255,255,255,0.5); text-transform:uppercase;">Account Name</span>
+          <div style="font-size:1.1rem; color:var(--text);">Makinde Joshua</div>
+        </div>
+      </div>
+      
+      <button type="button" id="sent-money-btn" class="btn btn-primary" style="width:100%; justify-content:center; margin-bottom:1rem;">I've Sent The Money</button>
+      <button type="button" id="cancel-payment-btn" class="btn" style="width:100%; justify-content:center; background:transparent; border:1px solid rgba(255,255,255,0.2); color:white;">Cancel Payment</button>
+    </div>
+  </div>
+
+  <script src="../js/components.js"></script>
+  <script src="../js/main.js"></script>
+
+  <script>
+    // Pre-select tier from URL param
+    const params = new URLSearchParams(window.location.search);
+    const tierParam = params.get('tier');
+    if (tierParam) {
+      const radio = document.querySelector(`input[name="tier"][value="${tierParam}"]`);
+      if (radio) {
+        radio.checked = true;
+        const tierOptions = document.querySelectorAll('.tier-option');
+        tierOptions.forEach(o => o.style.borderColor = '');
+        radio.closest('.tier-option').style.borderColor = 'var(--warm)';
+      }
+    }
+  </script>
+</body>
+</html>

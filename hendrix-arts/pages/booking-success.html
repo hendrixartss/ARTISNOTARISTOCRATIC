@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Booking Confirmed — HendrixArts</title>
+  <link rel="stylesheet" href="../css/style.css" />
+  <link rel="stylesheet" href="../css/pages.css" />
+  <script src="https://cdn.jsdelivr.net/npm/@emailjs/browser@4/dist/email.min.js"></script>
+  <script>emailjs.init('bRuZEyN6Fvs9K9KDq');</script>
+  <style>
+    .success-page {
+      min-height: 100vh;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      padding: 100px 5% 60px;
+    }
+    .success-card {
+      max-width: 600px;
+      width: 100%;
+      text-align: center;
+      background: rgba(255,255,255,0.03);
+      border: 1px solid rgba(247,227,200,0.15);
+      border-radius: 4px;
+      padding: 4rem 3rem;
+    }
+    .success-icon {
+      font-size: 4rem;
+      margin-bottom: 1.5rem;
+      display: block;
+      animation: pop 0.5s cubic-bezier(0.34, 1.56, 0.64, 1);
+    }
+    @keyframes pop { from { transform: scale(0); opacity: 0; } to { transform: scale(1); opacity: 1; } }
+    .success-card h1 {
+      font-family: var(--font-display);
+      font-size: 3rem;
+      letter-spacing: 0.05em;
+      margin-bottom: 0.5rem;
+    }
+    .success-card p {
+      color: rgba(255,255,255,0.6);
+      font-size: 0.95rem;
+      line-height: 1.8;
+      margin-bottom: 1.5rem;
+    }
+    .ref-box {
+      background: rgba(247,227,200,0.06);
+      border: 1px solid rgba(247,227,200,0.15);
+      border-radius: 2px;
+      padding: 1rem 1.5rem;
+      font-family: var(--font-display);
+      font-size: 0.9rem;
+      letter-spacing: 0.2em;
+      color: var(--warm);
+      margin: 1.5rem 0;
+    }
+    .next-steps {
+      text-align: left;
+      background: rgba(255,255,255,0.03);
+      border-radius: 2px;
+      padding: 1.5rem;
+      margin: 2rem 0;
+    }
+    .next-steps h3 {
+      font-family: var(--font-display);
+      font-size: 0.85rem;
+      letter-spacing: 0.2em;
+      color: var(--warm);
+      margin-bottom: 1rem;
+    }
+    .next-steps li {
+      font-size: 0.85rem;
+      color: rgba(255,255,255,0.6);
+      padding: 0.5rem 0;
+      border-bottom: 1px solid rgba(255,255,255,0.05);
+      /* display: flex; */
+      gap: 0.75rem;
+    }
+    .next-steps li:last-child { border-bottom: none; }
+    .step-num { color: var(--warm); font-weight: 600;  }
+  </style>
+</head>
+<body>
+
+  <div id="header-placeholder"></div>
+
+  <main class="page-content">
+    <div class="success-page">
+      <div class="success-card aos visible">
+        <span class="success-icon">🎨</span>
+        <h1>BOOKING<br>CONFIRMED</h1>
+        <p>Your slot is secured! Hendrix has received your booking and will begin work on your portrait shortly.</p>
+
+        <div class="ref-box" id="ref-display">Reference: Loading...</div>
+
+        <div class="next-steps">
+          <h3>WHAT HAPPENS NEXT</h3>
+          <ul>
+            <li><span class="step-num">01</span> Send your Payment Receipts to  <i><u><strong><a href="mailto:hendrixartss@gmail.com">hendrixartss@gmail.com</a></strong></u></i> or <i><u><strong><a href="https://wa.me/2348134530753">WhatsApp</a></strong></u></i> alongside your Reference Number</li>
+            <li><span class="step-num">02</span> We'll confirm receipt and share your estimated completion date</li>
+            <li><span class="step-num">03</span> Hendrix works on your portrait (7–21 days depending on tier)</li>
+            <li><span class="step-num">04</span> We send a preview photo for your approval</li>
+            <li><span class="step-num">05</span> Pay the remaining 40% and your art ships to you</li>
+          </ul>
+        </div>
+
+        <div style="display:flex; gap:1rem; justify-content:center; flex-wrap:wrap;">
+          <a href="https://wa.me/2348134530753" class="btn btn-primary">Send Receipt via WhatsApp</a>
+          <a href="../index.html" class="btn btn-outline">Back to Home</a>
+        </div>
+      </div>
+    </div>
+  </main>
+
+  <div id="footer-placeholder"></div>
+
+  <script src="../js/components.js"></script>
+  <script src="../js/main.js"></script>
+  <script>
+    const params = new URLSearchParams(window.location.search);
+    const ref = params.get('ref') || 'HA_XXXXXXXX';
+    document.getElementById('ref-display').textContent = 'Reference: ' + ref;
+  </script>
+</body>
+</html>

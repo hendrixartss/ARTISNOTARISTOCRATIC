@@ -1,0 +1,133 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Contact — HendrixArts</title>
+  <meta name="description" content="Get in touch with HendrixArts. We'd love to hear from you — bookings, enquiries, or just to say hi." />
+  <link rel="stylesheet" href="../css/style.css" />
+  <link rel="stylesheet" href="../css/pages.css" />
+  <script src="https://cdn.jsdelivr.net/npm/@emailjs/browser@4/dist/email.min.js"></script>
+  <script>emailjs.init('bRuZEyN6Fvs9K9KDq');</script>
+</head>
+<body>
+
+  <div id="header-placeholder"></div>
+
+  <main class="page-content">
+
+    <!-- PAGE HERO -->
+    <section class="page-hero">
+      <div class="page-hero-content">
+        <p class="section-label">Let's Talk</p>
+        <h1 class="page-title">Contact<br><span>Us</span></h1>
+        <p class="page-desc">Have a question, a special request, or just want to know more about the campaign? We're here.</p>
+      </div>
+    </section>
+
+    <!-- CONTACT SECTION -->
+    <section class="contact-section">
+
+      <div class="contact-info">
+        <p class="section-label aos">Reach Out</p>
+        <h2 class="section-title aos" style="font-size:clamp(2rem,4vw,3.5rem);">We're <span>Listening</span></h2>
+        <div class="divider aos"></div>
+
+        <div class="contact-info-item aos">
+          <div class="contact-icon">✉️</div>
+          <div>
+            <h4>Email</h4>
+            <a href="mailto:hendrixartss@gmail.com">hendrixartss@gmail.com</a>
+            <p style="margin-top:4px; font-size:0.8rem;">We respond within 24 hours.</p>
+          </div>
+        </div>
+
+        <div class="contact-info-item aos">
+          <div class="contact-icon">💬</div>
+          <div>
+            <h4>WhatsApp</h4>
+            <a href="https://wa.me/2348134530753">+2348134530753</a>
+            <p style="margin-top:4px; font-size:0.8rem;">Fastest response method — message us directly.</p>
+          </div>
+        </div>
+
+        <div class="contact-info-item aos">
+          <div class="contact-icon">📍</div>
+          <div>
+            <h4>Location</h4>
+            <p>University of Ibadan<br>Ibadan, Oyo State, Nigeria</p>
+          </div>
+        </div>
+
+        <div class="contact-info-item aos">
+          <div class="contact-icon">📱</div>
+          <div>
+            <h4>Social Media</h4>
+            <p>Follow <strong style="color:var(--warm);">@hendrixarts_</strong> on Instagram for latest works and campaign updates.</p>
+            <div class="footer-social" style="margin-top:1rem;">
+              <a href="https://www.instagram.com/hendrixarts_" class="social-icon" aria-label="Instagram">IG</a>
+              <a href="https://wa.me/2348134530753" class="social-icon" aria-label="WhatsApp">WA</a>
+            </div>
+          </div>
+        </div>
+
+        <!-- Quick Book -->
+        <div style="padding:2rem; background: linear-gradient(135deg, rgba(247,227,200,0.07), rgba(198,217,236,0.04)); border:1px solid rgba(247,227,200,0.12); border-radius:3px; margin-top:1rem;" class="aos">
+          <h4 style="font-family:var(--font-display); font-size:1rem; letter-spacing:0.15em; color:var(--warm); margin-bottom:0.75rem;">READY TO BOOK?</h4>
+          <p style="font-size:0.85rem; color:rgba(255,255,255,0.55); margin-bottom:1.25rem;">Skip the form and go straight to securing your slot.</p>
+          <a href="../pages/booking.html" class="btn btn-primary">Book Your Slot →</a>
+        </div>
+      </div>
+
+      <div class="contact-form-wrap aos">
+        <h2>SEND A MESSAGE</h2>
+        <form id="contact-form" action="https://formspree.io/f/mbdqjgyv" method="POST" novalidate>
+          <input type="hidden" name="_cc" value="makindejoshua123@gmail.com" />
+          <input type="hidden" name="_subject" value="New HendrixArts Contact Request" />
+
+          <div class="form-row">
+            <div class="form-group">
+              <label for="c-name">Your Name *</label>
+              <input type="text" id="c-name" name="name" placeholder="Full name" required />
+            </div>
+            <div class="form-group">
+              <label for="c-email">Email Address *</label>
+              <input type="email" id="c-email" name="email" placeholder="you@example.com" required />
+            </div>
+          </div>
+
+          <div class="form-group">
+            <label for="c-subject">Subject *</label>
+            <select id="c-subject" name="subject" required>
+              <option value="">— What's this about? —</option>
+              <option value="booking">Booking Enquiry</option>
+              <option value="campaign">Campaign Information</option>
+              <option value="pricing">Pricing & Tiers</option>
+              <option value="collaboration">Collaboration Proposal</option>
+              <option value="press">Press / Media</option>
+              <option value="other">Other</option>
+            </select>
+          </div>
+
+          <div class="form-group">
+            <label for="c-message">Message *</label>
+            <textarea id="c-message" name="message" rows="6" placeholder="Tell us what's on your mind..." required style="min-height:160px;"></textarea>
+          </div>
+
+          <button type="submit" class="btn btn-primary" style="width:100%; justify-content:center; padding:15px;">
+            Send Message
+            <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M22 2L11 13M22 2l-7 20-4-9-9-4z"/></svg>
+          </button>
+        </form>
+      </div>
+
+    </section>
+
+  </main>
+
+  <div id="footer-placeholder"></div>
+
+  <script src="../js/components.js"></script>
+  <script src="../js/main.js"></script>
+</body>
+</html>
