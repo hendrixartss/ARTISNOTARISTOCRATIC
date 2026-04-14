@@ -7,25 +7,16 @@
   <meta name="description" content="Browse HendrixArts portfolio — original pen drawings and portrait commissions by Joshua Opeyemi Makinde." />
   <link rel="stylesheet" href="../css/style.css" />
   <link rel="stylesheet" href="../css/pages.css" />
-  <style>
-    .gallery-item { position:relative; overflow:hidden; border-radius:3px; cursor:pointer; break-inside:avoid; margin-bottom:1.2rem; display:block; }
-    .gallery-item img { width:100%; height:100%; object-fit:cover; display:block; transition:transform 0.4s ease; }
-    .gallery-item:hover img { transform:scale(1.04); }
-    .gallery-item-overlay { position:absolute; inset:0; background:linear-gradient(to top, rgba(2,0,53,0.92) 0%, transparent 60%); opacity:0; transition:opacity 0.35s ease; display:flex; flex-direction:column; justify-content:flex-end; padding:1.5rem; }
-    .gallery-item:hover .gallery-item-overlay { opacity:1; }
-    .gallery-item-title { font-family:var(--font-serif); font-size:1rem; color:var(--white); font-style:italic; }
-    .gallery-item-type { font-size:0.7rem; letter-spacing:0.2em; text-transform:uppercase; color:var(--warm); margin-top:0.25rem; }
-    .lightbox { position:fixed; inset:0; background:rgba(2,0,53,0.97); z-index:10000; display:flex; align-items:center; justify-content:center; padding:2rem; opacity:0; visibility:hidden; transition:all 0.35s ease; }
-    .lightbox.open { opacity:1; visibility:visible; }
-    .lightbox-content { max-width:800px; width:100%; position:relative; }
-    .lightbox-content img { width:100%; max-height:80vh; object-fit:contain; border-radius:3px; display:block; }
-    .lightbox-close { position:absolute; top:-48px; right:0; background:none; border:1px solid rgba(247,227,200,0.3); border-radius:50%; width:36px; height:36px; color:var(--warm); font-size:1rem; cursor:pointer; display:flex; align-items:center; justify-content:center; transition:all 0.25s ease; }
-    .lightbox-close:hover { background:var(--warm); color:var(--navy); transform:rotate(90deg); }
-  </style>
+  <script src="https://cdn.jsdelivr.net/npm/@emailjs/browser@4/dist/email.min.js"></script>
+  <script>emailjs.init('bRuZEyN6Fvs9K9KDq');</script>
 </head>
 <body>
+
   <div id="header-placeholder"></div>
+
   <main class="page-content">
+
+    <!-- PAGE HERO -->
     <section class="page-hero">
       <div class="page-hero-content">
         <p class="section-label">Portfolio</p>
@@ -33,6 +24,8 @@
         <p class="page-desc">Every piece is drawn by hand — pen on paper. A visual record of a movement that believes art belongs to everyone.</p>
       </div>
     </section>
+
+    <!-- FILTER -->
     <div class="gallery-filter">
       <button class="filter-btn active" data-filter="all">All Works</button>
       <button class="filter-btn" data-filter="portrait">Portraits</button>
@@ -40,142 +33,125 @@
       <button class="filter-btn" data-filter="commissioned">Commissioned</button>
       <button class="filter-btn" data-filter="competition">Competition Pieces</button>
     </div>
+
+    <!-- GALLERY MASONRY -->
     <section class="gallery-section">
       <div class="gallery-masonry">
 
-        <div class="gallery-item" data-category="competition" data-src="../images/AYODEJI.jpeg" data-title="AYODEJI — BIC Art Master Nigeria National Winner">
-          <img src="../images/AYODEJI.jpeg" alt="AYODEJI" loading="lazy" />
-          <div class="gallery-item-overlay"><div class="gallery-item-title">AYODEJI — BIC Art Master Nigeria National Winner</div><div class="gallery-item-type">Pen · Competition 🏆</div></div>
+        <div class="gallery-item" data-category="competition">
+          <div class="img-placeholder" style="min-height:30px;">
+           <img src="../images/AYODEJI.jpeg" />
+          </div>
+          <div class="gallery-item-overlay">
+            <div class="gallery-item-title">AYODEJI — BIC Art Master Nigeria National Winner</div>
+            <div class="gallery-item-type">Pen · Competition 🏆</div>
+          </div>
         </div>
 
-        <div class="gallery-item" data-category="portrait" data-src="../images/PhotoShot_1715270646204.jpeg" data-title="OLADAYO">
-          <img src="../images/PhotoShot_1715270646204.jpeg" alt="OLADAYO" loading="lazy" />
-          <div class="gallery-item-overlay"><div class="gallery-item-title">OLADAYO</div><div class="gallery-item-type">Pen · Sketch Series</div></div>
+        <div class="gallery-item" data-category="portrait">
+          <div class="img-placeholder" style="min-height:240px;">
+            <img src="../images/PhotoShot_1715270646204.jpeg" />
+          </div>
+          <div class="gallery-item-overlay">
+            <div class="gallery-item-title">OLADAYO</div>
+            <div class="gallery-item-type">Pen · Sketch Series</div>
+          </div>
         </div>
 
-        <div class="gallery-item" data-category="portrait" data-src="../images/Lawrence Oyor Official drawing .jpg" data-title="LAWRENCE G. OYOR">
-          <img src="../images/Lawrence Oyor Official drawing .jpg" alt="LAWRENCE G. OYOR" loading="lazy" />
-          <div class="gallery-item-overlay"><div class="gallery-item-title">LAWRENCE G. OYOR</div><div class="gallery-item-type">Pen · Gift</div></div>
+        <div class="gallery-item" data-category="portrait">
+          <div class="img-placeholder" style="min-height:320px;">
+            <img src="../images/Lawrence Oyor Official drawing .jpg" />
+          </div>
+          <div class="gallery-item-overlay">
+            <div class="gallery-item-title">LAWRENCE G. OYOR</div>
+            <div class="gallery-item-type">Pen · Gift</div>
+          </div>
         </div>
 
-        <div class="gallery-item" data-category="competition" data-src="../images/CHANGE BEGINS WITH ME.jpeg" data-title="INTEGRITY">
-          <img src="../images/CHANGE BEGINS WITH ME.jpeg" alt="INTEGRITY" loading="lazy" />
-          <div class="gallery-item-overlay"><div class="gallery-item-title">INTEGRITY</div><div class="gallery-item-type">Pen · Competition 🏆</div></div>
+        <div class="gallery-item" data-category="competition">
+          <div class="img-placeholder" style="min-height:280px;">
+            <img src="../images/CHANGE BEGINS WITH ME.jpeg" />
+          </div>
+          <div class="gallery-item-overlay">
+            <div class="gallery-item-title">INTEGRITY</div>
+            <div class="gallery-item-type">Pen · Competition 🏆</div>
+          </div>
         </div>
 
-        <div class="gallery-item" data-category="portrait" data-src="../images/PhotoStudio_1703444625132.jpeg" data-title="LIGHT AND SHADOW">
-          <img src="../images/PhotoStudio_1703444625132.jpeg" alt="LIGHT AND SHADOW" loading="lazy" />
-          <div class="gallery-item-overlay"><div class="gallery-item-title">LIGHT AND SHADOW</div><div class="gallery-item-type">Pen · Experimental</div></div>
+        <div class="gallery-item" data-category="portrait">
+          <div class="img-placeholder" style="min-height:380px;">
+            <img src="../images/PhotoStudio_1703444625132.jpeg" />
+          </div>
+          <div class="gallery-item-overlay">
+            <div class="gallery-item-title">LIGHT AND SHADOW</div>
+            <div class="gallery-item-type">Pen · Experimental</div>
+          </div>
         </div>
 
-        <div class="gallery-item" data-category="commissioned" data-src="../images/IMG_20231221_203123_861~3_1.jpg" data-title="SHADING STUDY">
-          <img src="../images/IMG_20231221_203123_861~3_1.jpg" alt="SHADING STUDY" loading="lazy" />
-          <div class="gallery-item-overlay"><div class="gallery-item-title">SHADING STUDY</div><div class="gallery-item-type">Pen · Experimental</div></div>
+        <div class="gallery-item" data-category="commissioned">
+          <div class="img-placeholder" style="min-height:260px;">
+            <img src="../images/IMG_20231221_203123_861~3_1.jpg" />
+          </div>
+          <div class="gallery-item-overlay">
+            <div class="gallery-item-title">SHADING STUDY</div>
+            <div class="gallery-item-type">Pen · Experimental</div>
+          </div>
         </div>
 
-        <div class="gallery-item" data-category="commissioned" data-src="../images/Flower dump 2-01.jpeg" data-title="FLOWER">
-          <img src="../images/Flower dump 2-01.jpeg" alt="FLOWER" loading="lazy" />
-          <div class="gallery-item-overlay"><div class="gallery-item-title">FLOWER</div><div class="gallery-item-type">Pen · Texture Study</div></div>
+        <div class="gallery-item" data-category="commissioned">
+          <div class="img-placeholder" style="min-height:340px;">
+            <img src="../images/Flower dump 2-01.jpeg" />
+          </div>
+          <div class="gallery-item-overlay">
+            <div class="gallery-item-title">FLOWER</div>
+            <div class="gallery-item-type">Pen · Texture Study</div>
+          </div>
         </div>
 
-        <div class="gallery-item" data-category="portrait" data-src="../images/20251230_192525-01.jpg" data-title="CLOSE-UP ART">
-          <img src="../images/20251230_192525-01.jpg" alt="CLOSE-UP ART" loading="lazy" />
-          <div class="gallery-item-overlay"><div class="gallery-item-title">CLOSE-UP ART</div><div class="gallery-item-type">Pen · Personal Work</div></div>
+        <div class="gallery-item" data-category="portrait">
+          <div class="img-placeholder" style="min-height:220px;">
+            <img src="../images/20251230_192525-01.jpg" />
+          </div>
+          <div class="gallery-item-overlay">
+            <div class="gallery-item-title">CLOSE-UP ART</div>
+            <div class="gallery-item-type">Pen · Personal Work</div>
+          </div>
         </div>
 
-        <div class="gallery-item" data-category="commissioned" data-src="../images/IMG-20240528-WA0057(1).jpg.jpeg" data-title="Nature and its Inhabitants">
-          <img src="../images/IMG-20240528-WA0057(1).jpg.jpeg" alt="Nature and its Inhabitants" loading="lazy" />
-          <div class="gallery-item-overlay"><div class="gallery-item-title">Nature and its Inhabitants</div><div class="gallery-item-type">Pen · Nature</div></div>
-        </div>
-
-        <div class="gallery-item" data-category="portrait" data-src="../images/DSC_2718-03.jpeg" data-title="Portrait Study">
-          <img src="../images/DSC_2718-03.jpeg" alt="Portrait Study" loading="lazy" />
-          <div class="gallery-item-overlay"><div class="gallery-item-title">Portrait Study</div><div class="gallery-item-type">Pen · Portrait</div></div>
-        </div>
-
-        <div class="gallery-item" data-category="portrait" data-src="../images/DSC_2718-03-01.jpeg" data-title="Portrait Study II">
-          <img src="../images/DSC_2718-03-01.jpeg" alt="Portrait Study II" loading="lazy" />
-          <div class="gallery-item-overlay"><div class="gallery-item-title">Portrait Study II</div><div class="gallery-item-type">Pen · Portrait</div></div>
-        </div>
-
-        <div class="gallery-item" data-category="pen" data-src="../images/20250612_211032~2-01-01.jpeg" data-title="Pen Work">
-          <img src="../images/20250612_211032~2-01-01.jpeg" alt="Pen Work" loading="lazy" />
-          <div class="gallery-item-overlay"><div class="gallery-item-title">Pen Work</div><div class="gallery-item-type">Pen · Drawing</div></div>
-        </div>
-
-        <div class="gallery-item" data-category="portrait" data-src="../images/Ajibola.jpg" data-title="AJIBOLA">
-          <img src="../images/Ajibola.jpg" alt="AJIBOLA" loading="lazy" />
-          <div class="gallery-item-overlay"><div class="gallery-item-title">AJIBOLA</div><div class="gallery-item-type">Pen · Portrait</div></div>
-        </div>
-
-        <div class="gallery-item" data-category="pen" data-src="../images/IMG_20230818_132216_802~2.jpg" data-title="Sketch Study">
-          <img src="../images/IMG_20230818_132216_802~2.jpg" alt="Sketch Study" loading="lazy" />
-          <div class="gallery-item-overlay"><div class="gallery-item-title">Sketch Study</div><div class="gallery-item-type">Pen · Sketch</div></div>
-        </div>
-
-        <div class="gallery-item" data-category="pen" data-src="../images/1001403314.jpg" data-title="Pen Drawing">
-          <img src="../images/1001403314.jpg" alt="Pen Drawing" loading="lazy" />
-          <div class="gallery-item-overlay"><div class="gallery-item-title">Pen Drawing</div><div class="gallery-item-type">Pen · Drawing</div></div>
-        </div>
-
-        <div class="gallery-item" data-category="pen" data-src="../images/1001403315.jpg" data-title="Pen Drawing II">
-          <img src="../images/1001403315.jpg" alt="Pen Drawing II" loading="lazy" />
-          <div class="gallery-item-overlay"><div class="gallery-item-title">Pen Drawing II</div><div class="gallery-item-type">Pen · Drawing</div></div>
+        <div class="gallery-item" data-category="commissioned">
+          <div class="img-placeholder" style="min-height:310px;">
+            <img src="../images/IMG-20240528-WA0057(1).jpg.jpeg" />
+          </div>
+          <div class="gallery-item-overlay">
+            <div class="gallery-item-title">Nature and its Inhabitants</div>
+            <div class="gallery-item-type">Pen · Nature</div>
+          </div>
         </div>
 
       </div>
     </section>
 
+    <!-- CTA -->
     <section class="section-sm" style="text-align:center; border-top: 1px solid rgba(247,227,200,0.07);">
       <p class="section-label" style="justify-content:center;">Ready for Yours?</p>
       <h2 style="font-family:var(--font-display); font-size:clamp(2rem,5vw,4rem); letter-spacing:0.05em; margin-bottom:1.5rem;">YOUR PORTRAIT<br><span style="background:var(--gradient-warm);-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text;">BELONGS HERE</span></h2>
       <a href="../pages/booking.html" class="btn btn-primary">Book Your Slot →</a>
     </section>
+
   </main>
 
-  <div class="lightbox" id="lightbox">
-    <div class="lightbox-content">
-      <button class="lightbox-close" id="lightbox-close">✕</button>
-      <img id="lightbox-img" src="" alt="" />
-      <p id="lightbox-title" style="text-align:center; margin-top:1rem; font-family:var(--font-serif); font-style:italic; color:var(--warm);"></p>
-    </div>
+  <!-- LIGHTBOX -->
+ <div class="lightbox" id="lightbox">
+  <div class="lightbox-content">
+    <button class="lightbox-close" id="lightbox-close">✕</button>
+    <img id="lightbox-img" src="" alt="" style="width:100%; border-radius:3px; display:block;" />
+    <p id="lightbox-title" style="text-align:center; margin-top:1rem; font-family:var(--font-serif); font-style:italic; color:var(--warm);"></p>
   </div>
+</div>
 
   <div id="footer-placeholder"></div>
+
   <script src="../js/components.js"></script>
   <script src="../js/main.js"></script>
-  <script>
-    const galleryItems = document.querySelectorAll('.gallery-item');
-    const lightbox = document.getElementById('lightbox');
-    const lightboxImg = document.getElementById('lightbox-img');
-    const lightboxTitle = document.getElementById('lightbox-title');
-    const lightboxClose = document.getElementById('lightbox-close');
-
-    galleryItems.forEach(item => {
-      item.addEventListener('click', () => {
-        lightboxImg.src = item.dataset.src;
-        lightboxImg.alt = item.dataset.title;
-        lightboxTitle.textContent = item.dataset.title;
-        lightbox.classList.add('open');
-        document.body.style.overflow = 'hidden';
-      });
-    });
-
-    const closeLB = () => { lightbox.classList.remove('open'); document.body.style.overflow = ''; lightboxImg.src = ''; };
-    lightboxClose.addEventListener('click', closeLB);
-    lightbox.addEventListener('click', e => { if (e.target === lightbox) closeLB(); });
-    document.addEventListener('keydown', e => { if (e.key === 'Escape') closeLB(); });
-
-    document.querySelectorAll('.filter-btn').forEach(btn => {
-      btn.addEventListener('click', () => {
-        document.querySelectorAll('.filter-btn').forEach(b => b.classList.remove('active'));
-        btn.classList.add('active');
-        const filter = btn.dataset.filter;
-        galleryItems.forEach(item => {
-          item.style.display = (filter === 'all' || (item.dataset.category || '').includes(filter)) ? '' : 'none';
-        });
-      });
-    });
-  </script>
 </body>
 </html>
